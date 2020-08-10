@@ -1,0 +1,27 @@
+"""
+	CODE : STRONG PASSWORD GENERATOR
+	AUTHOR : NASIF FUAD AL ARIF (NAFI)
+	LANGUAGE : PYTHON
+	RELEASE DATE : 29 JULY 2020.
+	DESCRIPTION : ENTER A SENTENCE OR A WORD TO MAKE A STRONG PASSWORD
+"""
+
+import random
+passwordList = input("Enter a sentence or a word to convert it into a strong password:\n").split()
+
+passwordString = "_".join(passwordList)
+
+password = passwordString.replace("a","@")
+listOfSign = ["@","#","%","&",":","!","+",")","+","£","$","=","~"] 
+randomSignOne = random.choice(listOfSign)
+randomSignTwo= random.choice(listOfSign)
+randomSignThree = random.choice(listOfSign)
+randomSignFour = random.choice(listOfSign)
+listOfPasswords = [
+	randomSignOne + randomSignThree  + password + randomSignFour + randomSignTwo ,
+	randomSignOne + randomSignTwo + password + randomSignThree ,
+	randomSignFour + randomSignOne  + password + randomSignTwo +randomSignThree,
+	randomSignOne + randomSignFour + password + randomSignTwo +randomSignThree
+]
+mainPassword = random.choice(listOfPasswords)
+print(mainPassword)
